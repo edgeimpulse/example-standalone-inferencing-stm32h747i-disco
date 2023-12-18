@@ -38,7 +38,7 @@ int ei_main(void)
     USART1_UART_Init();
 
     while (true) {
-        ei_printf("Edge Impulse standalone inferencing (STM32F466RE)\n");
+        ei_printf("Edge Impulse standalone inferencing (STM32H747I-DISCO)\n");
 
         if (sizeof(features) / sizeof(float) != EI_CLASSIFIER_DSP_INPUT_FRAME_SIZE) {
             ei_printf("The size of your 'features' array is not correct. Expected %d items, but had %u\n",

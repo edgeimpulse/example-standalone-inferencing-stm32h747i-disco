@@ -18,6 +18,8 @@
 #include "uart.h"
 #include "stm32h7xx_hal.h"
 
+extern void HAL_UART_MspInit(UART_HandleTypeDef* huart);
+
 UART_HandleTypeDef huart1;
 
 static uint8_t rx_buffer[256];
@@ -37,15 +39,15 @@ int uart_print(char* msg, uint16_t len)
   */
 void USART1_UART_Init(void)
 {
-
+    huart1.Instance = USART1;
     /* USER CODE BEGIN USART1_Init 0 */
-
+    HAL_UART_MspInit(&huart1);
     /* USER CODE END USART1_Init 0 */
 
     /* USER CODE BEGIN USART1_Init 1 */
 
     /* USER CODE END USART1_Init 1 */
-    huart1.Instance = USART1;
+    
     huart1.Init.BaudRate = 115200;
     huart1.Init.WordLength = UART_WORDLENGTH_8B;
     huart1.Init.StopBits = UART_STOPBITS_1;
