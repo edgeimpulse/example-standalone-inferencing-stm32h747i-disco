@@ -1,0 +1,7 @@
+load STM32H747XIHx 
+project name STCubeGenerated 
+project toolchain "MDK-ARM V5" 
+project path "C:\work\edge_impulse\keil\example-standalone-inferencing-stm32h747i-disco\STM32CubeMX\" 
+set tpl_path "C:\Users\franc\AppData\Local\Arm\Packs\Keil\STM32H7xx_DFP\3.1.1\MDK\CubeMX\DC" 
+set dest_path "C:\work\edge_impulse\keil\example-standalone-inferencing-stm32h747i-disco" 
+SetCopyLibrary  "copy as reference"
