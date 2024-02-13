@@ -3,8 +3,8 @@
  * Auto generated Run-Time-Environment Configuration File
  *      *** Do not modify ! ***
  *
- * Project: 'example-standalone-inferencing-stm32h747i-disco' 
- * Target:  'DISCO' 
+ * Project: 'example-standalone-inferencing-stm32h747i-disco-CM4' 
+ * Target:  'CM4' 
  */
 
 #ifndef PRE_INCLUDE_GLOBAL_H

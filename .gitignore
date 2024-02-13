@@ -2,4 +2,9 @@ CM7/DebugConfig
 CM7/Listings
 CM7/Objects
 
+CM4/DebugConfig
+CM4/Listings
+CM4/Objects
+
 *.scvd
+*.franc

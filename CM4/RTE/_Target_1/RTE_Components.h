@@ -3,7 +3,7 @@
  * Auto generated Run-Time-Environment Configuration File
  *      *** Do not modify ! ***
  *
- * Project: 'example-standalone-inferencing-stm32h747i-disco-CM7' 
+ * Project: 'example-standalone-inferencing-stm32h747i-disco-CM4' 
  * Target:  'Target 1' 
  */
 

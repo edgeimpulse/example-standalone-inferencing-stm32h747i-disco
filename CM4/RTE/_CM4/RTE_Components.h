@@ -3,8 +3,8 @@
  * Auto generated Run-Time-Environment Configuration File
  *      *** Do not modify ! ***
  *
- * Project: 'example-standalone-inferencing-stm32h747i-disco' 
- * Target:  'DISCO' 
+ * Project: 'example-standalone-inferencing-stm32h747i-disco-CM4' 
+ * Target:  'CM4' 
  */
 
 #ifndef RTE_COMPONENTS_H
@@ -22,8 +22,6 @@
 #define RTE_DEVICE_HAL_COMMON
 /* Keil::Device:STM32Cube HAL:Cortex:1.11.0 */
 #define RTE_DEVICE_HAL_CORTEX
-/* Keil::Device:STM32Cube HAL:DMA:1.11.0 */
-#define RTE_DEVICE_HAL_DMA
 /* Keil::Device:STM32Cube HAL:GPIO:1.11.0 */
 #define RTE_DEVICE_HAL_GPIO
 /* Keil::Device:STM32Cube HAL:HSEM:1.11.0 */
@@ -32,8 +30,6 @@
 #define RTE_DEVICE_HAL_PWR
 /* Keil::Device:STM32Cube HAL:RCC:1.11.0 */
 #define RTE_DEVICE_HAL_RCC
-/* Keil::Device:STM32Cube HAL:UART:1.11.0 */
-#define RTE_DEVICE_HAL_UART
 /* Keil::Device:Startup:1.11.0 */
 #define RTE_DEVICE_STARTUP_STM32H7XX    /* Device Startup for STM32H7 */
 

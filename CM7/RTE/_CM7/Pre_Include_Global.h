@@ -4,7 +4,7 @@
  *      *** Do not modify ! ***
  *
  * Project: 'example-standalone-inferencing-stm32h747i-disco-CM7' 
- * Target:  'Target 1' 
+ * Target:  'CM7' 
  */
 
 #ifndef PRE_INCLUDE_GLOBAL_H

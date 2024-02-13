@@ -7,7 +7,7 @@
 
   <Targets>
     <Target>
-      <TargetName>DISCO</TargetName>
+      <TargetName>CM7</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
       <pCCUsed>6190000::V6.19::ARMCLANG</pCCUsed>
@@ -49,7 +49,7 @@
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
           <OutputDirectory>.\Objects\</OutputDirectory>
-          <OutputName>example-standalone-inferencing-stm32h747i-disco</OutputName>
+          <OutputName>example-standalone-inferencing-stm32h747i-disco-CM7</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>0</CreateHexFile>
@@ -323,7 +323,7 @@
             <PlainCh>0</PlainCh>
             <Ropi>0</Ropi>
             <Rwpi>0</Rwpi>
-            <wLevel>1</wLevel>
+            <wLevel>2</wLevel>
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
             <uC99>1</uC99>
@@ -337,8 +337,8 @@
             <v6WtE>0</v6WtE>
             <v6Rtti>0</v6Rtti>
             <VariousControls>
-              <MiscControls>-Wno-c++98-compat -Wno-c++98-compat-pedantic</MiscControls>
-              <Define>EI_PORTING_STM32_DISCO=1,EI_PORTING_STM32_CUBEAI=0</Define>
+              <MiscControls></MiscControls>
+              <Define></Define>
               <Undefine></Undefine>
               <IncludePath></IncludePath>
             </VariousControls>
@@ -383,23 +383,6 @@
       <Groups>
         <Group>
           <GroupName>Edge Impulse</GroupName>
-          <Files>
-            <File>
-              <FileName>ei_main.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\ei_main.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>ei_main.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\ei_main.h</FilePath>
-            </File>
-            <File>
-              <FileName>ei_classifier_porting.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\ei_classifier_porting.cpp</FilePath>
-            </File>
-          </Files>
         </Group>
         <Group>
           <GroupName>:STM32CubeMX_CM7:Common Sources</GroupName>
@@ -422,33 +405,45 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>peripheral</GroupName>
-          <Files>
-            <File>
-              <FileName>uart.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\uart.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
         <Group>
           <GroupName>::Device</GroupName>
-        </Group>
-        <Group>
-          <GroupName>::EdgeImpulse</GroupName>
         </Group>
       </Groups>
     </Target>
   </Targets>
 
   <RTE>
+    <packages>
+      <filter>
+        <targetInfos/>
+      </filter>
+      <package name="CMSIS-DSP" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="ARM" version="1.15.0">
+        <targetInfos>
+          <targetInfo name="CM7" versionMatchMode="fixed"/>
+        </targetInfos>
+      </package>
+      <package name="CMSIS-NN" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="ARM" version="4.0.0">
+        <targetInfos>
+          <targetInfo name="CM7" versionMatchMode="fixed"/>
+        </targetInfos>
+      </package>
+      <package name="CMSIS" schemaVersion="1.7.7" url="http://www.keil.com/pack/" vendor="ARM" version="5.9.0">
+        <targetInfos>
+          <targetInfo name="CM7" versionMatchMode="fixed"/>
+        </targetInfos>
+      </package>
+      <package name="STM32H7xx_DFP" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="Keil" version="3.1.1">
+        <targetInfos>
+          <targetInfo name="CM7"/>
+        </targetInfos>
+      </package>
+    </packages>
     <gpdscs>
       <gpdsc name="STM32CubeMX/FrameworkCubeMX.gpdsc">
         <targetInfos>
-          <targetInfo name="DISCO"/>
+          <targetInfo name="CM7"/>
         </targetInfos>
       </gpdsc>
     </gpdscs>
@@ -456,7 +451,7 @@
       <api Capiversion="1.1.0" Cclass="Device" Cgroup="STM32Cube Framework" condition="STM32H7" exclusive="1">
         <package name="STM32H7xx_DFP" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="Keil" version="3.1.1"/>
         <targetInfos>
-          <targetInfo name="DISCO"/>
+          <targetInfo name="CM7"/>
         </targetInfos>
       </api>
     </apis>
@@ -464,85 +459,61 @@
       <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="5.6.0" condition="ARMv6_7_8-M Device">
         <package name="CMSIS" schemaVersion="1.7.7" url="http://www.keil.com/pack/" vendor="ARM" version="5.9.0"/>
         <targetInfos>
-          <targetInfo name="DISCO"/>
+          <targetInfo name="CM7"/>
         </targetInfos>
       </component>
       <component Cclass="CMSIS" Cgroup="DSP" Cvariant="Source" Cvendor="ARM" Cversion="1.15.0" condition="CMSISCORE">
         <package name="CMSIS-DSP" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="ARM" version="1.15.0"/>
         <targetInfos>
-          <targetInfo name="DISCO"/>
+          <targetInfo name="CM7"/>
         </targetInfos>
       </component>
       <component Cclass="CMSIS" Cgroup="NN Lib" Cvendor="ARM" Cversion="4.0.0" condition="CMSIS-NN">
         <package name="CMSIS-NN" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="ARM" version="4.0.0"/>
         <targetInfos>
-          <targetInfo name="DISCO"/>
-        </targetInfos>
-      </component>
-      <component Cclass="EdgeImpulse" Cgroup="SDK" Cvendor="EdgeImpulse" Cversion="1.0.0">
-        <package name="EI-SDK" schemaVersion="1.7.7" url="http://www.edgeimpulse.com/" vendor="EdgeImpulse" version="1.0.0"/>
-        <targetInfos>
-          <targetInfo name="DISCO"/>
-        </targetInfos>
-      </component>
-      <component Cclass="EdgeImpulse" Cgroup="model" Csub="Motion_recognition" Cvendor="EdgeImpulse" Cversion="1.0.44">
-        <package name="Motion_recognition" schemaVersion="1.7.7" url="http://www.edgeimpulse.com/" vendor="EdgeImpulse" version="1.0.44"/>
-        <targetInfos>
-          <targetInfo name="DISCO"/>
+          <targetInfo name="CM7"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="Common" Cvendor="Keil" Cversion="1.11.0" condition="STM32H7 HAL Common">
         <package name="STM32H7xx_DFP" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="Keil" version="3.1.1"/>
         <targetInfos>
-          <targetInfo name="DISCO"/>
+          <targetInfo name="CM7"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="Cortex" Cvendor="Keil" Cversion="1.11.0" condition="STM32H7 HAL">
         <package name="STM32H7xx_DFP" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="Keil" version="3.1.1"/>
         <targetInfos>
-          <targetInfo name="DISCO"/>
-        </targetInfos>
-      </component>
-      <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="DMA" Cvendor="Keil" Cversion="1.11.0" condition="STM32H7 HAL">
-        <package name="STM32H7xx_DFP" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="Keil" version="3.1.1"/>
-        <targetInfos>
-          <targetInfo name="DISCO"/>
+          <targetInfo name="CM7"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="GPIO" Cvendor="Keil" Cversion="1.11.0" condition="STM32H7 HAL">
         <package name="STM32H7xx_DFP" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="Keil" version="3.1.1"/>
         <targetInfos>
-          <targetInfo name="DISCO"/>
+          <targetInfo name="CM7"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="HSEM" Cvendor="Keil" Cversion="1.11.0" condition="STM32H7 HAL">
         <package name="STM32H7xx_DFP" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="Keil" version="3.1.1"/>
         <targetInfos>
-          <targetInfo name="DISCO"/>
+          <targetInfo name="CM7"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="PWR" Cvendor="Keil" Cversion="1.11.0" condition="STM32H7 HAL">
         <package name="STM32H7xx_DFP" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="Keil" version="3.1.1"/>
         <targetInfos>
-          <targetInfo name="DISCO"/>
+          <targetInfo name="CM7"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="RCC" Cvendor="Keil" Cversion="1.11.0" condition="STM32H7 HAL GPIO">
         <package name="STM32H7xx_DFP" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="Keil" version="3.1.1"/>
         <targetInfos>
-          <targetInfo name="DISCO"/>
-        </targetInfos>
-      </component>
-      <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="UART" Cvendor="Keil" Cversion="1.11.0" condition="STM32H7 HAL DMA">
-        <package name="STM32H7xx_DFP" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="Keil" version="3.1.1"/>
-        <targetInfos>
-          <targetInfo name="DISCO"/>
+          <targetInfo name="CM7"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="Startup" Cvendor="Keil" Cversion="1.11.0" condition="STM32H7 CMSIS">
         <package name="STM32H7xx_DFP" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="Keil" version="3.1.1"/>
         <targetInfos>
-          <targetInfo name="DISCO"/>
+          <targetInfo name="CM7"/>
         </targetInfos>
       </component>
     </components>
@@ -552,7 +523,7 @@
         <component Cclass="Device" Cgroup="Startup" Cvendor="Keil" Cversion="1.11.0" condition="STM32H7 CMSIS"/>
         <package name="STM32H7xx_DFP" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="Keil" version="3.1.1"/>
         <targetInfos>
-          <targetInfo name="DISCO"/>
+          <targetInfo name="CM7"/>
         </targetInfos>
       </file>
       <file attr="config" category="source" condition="STM32H7_DC" name="Drivers\CMSIS\Device\ST\STM32H7xx\Source\Templates\system_stm32h7xx_dualcore_boot_cm4_cm7.c" version="1.11.0">
@@ -560,7 +531,7 @@
         <component Cclass="Device" Cgroup="Startup" Cvendor="Keil" Cversion="1.11.0" condition="STM32H7 CMSIS"/>
         <package name="STM32H7xx_DFP" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="Keil" version="3.1.1"/>
         <targetInfos>
-          <targetInfo name="DISCO"/>
+          <targetInfo name="CM7"/>
         </targetInfos>
       </file>
     </files>
@@ -569,7 +540,7 @@
   <LayerInfo>
     <Layers>
       <Layer>
-        <LayName>example-standalone-inferencing-stm32h747i-disco</LayName>
+        <LayName>example-standalone-inferencing-stm32h747i-disco-CM7</LayName>
         <LayPrjMark>1</LayPrjMark>
       </Layer>
     </Layers>
