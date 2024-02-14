@@ -338,7 +338,7 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls>-Wno-c++98-compat -Wno-c++98-compat-pedantic</MiscControls>
-              <Define>EI_PORTING_STM32_CUBEAI=1</Define>
+              <Define>EI_PORTING_STM32_H7_KEIL=1,EI_PORTING_STM32_CUBEAI=0</Define>
               <Undefine></Undefine>
               <IncludePath></IncludePath>
             </VariousControls>
@@ -399,6 +399,11 @@
               <FileType>1</FileType>
               <FilePath>.\retarget.c</FilePath>
             </File>
+            <File>
+              <FileName>ei_classifier_porting.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\ei_classifier_porting.cpp</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -418,6 +423,16 @@
               <FileName>stm32h7xx_it.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\STM32CubeMX\STCubeGenerated\CM7\Src\stm32h7xx_it.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Peripheral</GroupName>
+          <Files>
+            <File>
+              <FileName>uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\uart.c</FilePath>
             </File>
           </Files>
         </Group>
