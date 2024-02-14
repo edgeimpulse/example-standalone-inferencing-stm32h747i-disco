@@ -395,9 +395,9 @@
               <FilePath>.\ei_main.cpp</FilePath>
             </File>
             <File>
-              <FileName>ei_classifier_porting.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\ei_classifier_porting.cpp</FilePath>
+              <FileName>retarget.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\retarget.c</FilePath>
             </File>
           </Files>
         </Group>
