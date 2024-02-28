@@ -10,7 +10,6 @@
   <project>
     <PathAndName>.\CM7\example-standalone-inferencing-stm32h747i-disco-CM7.uvprojx</PathAndName>
     <NodeIsActive>1</NodeIsActive>
-    <NodeIsExpanded>1</NodeIsExpanded>
   </project>
 
   <project>
